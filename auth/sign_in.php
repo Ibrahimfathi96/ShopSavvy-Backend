@@ -10,3 +10,4 @@ $stmt = $con->prepare("SELECT * FROM users WHERE users_email = ? OR users_passwo
 $stmt->execute(array($email, $password));
 $count = $stmt->rowCount();
 result($count);
+result($count);
