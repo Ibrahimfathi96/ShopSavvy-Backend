@@ -148,13 +148,13 @@ function printSuccess($message = "none")
     echo json_encode(array("status" => "success", "message" => $message));
 }
 
-function Result($count)
+function printResult($count)
 {
-    if($count > 0 ){
-        printSuccess();
-    }else{
-        printFailure();
-    }
+    if ($count > 0){
+        printSuccess() ; 
+       }else {
+        printFailure()  ; 
+       }
 }
 function sendMail($to, $title, $body)
 {
@@ -162,5 +162,4 @@ function sendMail($to, $title, $body)
     $header = "From: ibmf796@gmail.com" . "\n" . "CC: ibrahimFathi796@outlook.com";
 
     mail($to, $title, $body, $header);
-
 }

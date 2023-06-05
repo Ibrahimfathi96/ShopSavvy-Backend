@@ -20,6 +20,7 @@ if ($count > 0) {
         "users_phone"          => $phone,
         "users_password"       => $password,
         "users_verify_code"    => $verifycode,
+        "users_approve"        => 1,
     );
     // sendMail($email, "Verify Code ShopSavvy","Verify Code is $verifycode");
     insertData("users", $data);
