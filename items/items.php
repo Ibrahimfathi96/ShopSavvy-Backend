@@ -1,4 +1,8 @@
 <?php
 include "../connect.php";
-getAllData("itemview", "1 = 1");
+
+$categoryId = filterRequest("id");
+
+getAllData("itemview", "categories_id = $categoryId");
+
 ?>
