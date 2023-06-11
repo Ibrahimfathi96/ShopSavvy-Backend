@@ -3,6 +3,6 @@ include "../connect.php";
 
 $categoryId = filterRequest("id");
 
-getAllData("itemview", "categories_id = $categoryId");
+getAllData("itemview", "categories_id = '$categoryId' ");
 
 ?>
