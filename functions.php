@@ -1,25 +1,24 @@
 <?php
 
-define("MB", 1048576);
+define('MB', 1048576);
 
 function filterRequest($requestname)
 {
     return  htmlspecialchars(strip_tags($_POST[$requestname]));
 }
-
 function getAllData($table, $where = null, $values = null, $json = true)
 {
     global $con;
     $data = array();
     if ($where == null) {
-        $stmt = $con->prepare("SELECT * FROM $table  ");
+        $stmt = $con->prepare("SELECT  * FROM $table   ");
     } else {
         $stmt = $con->prepare("SELECT  * FROM $table WHERE   $where ");
     }
     $stmt->execute($values);
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $count  = $stmt->rowCount();
-    if ($json ==  true) {
+    if ($json == true) {
         if ($count > 0) {
             echo json_encode(array("status" => "success", "data" => $data));
         } else {
@@ -27,13 +26,14 @@ function getAllData($table, $where = null, $values = null, $json = true)
         }
         return $count;
     } else {
-        if($count > 0 ){
+        if ($count > 0) {
             return $data;
-        }else{
+        } else {
             return json_encode(array("status" => "failure"));
         }
     }
 }
+
 function getData($table, $where = null, $values = null)
 {
     global $con;

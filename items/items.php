@@ -1,8 +1,5 @@
-<?php
-include "../connect.php";
-
-$categoryId = filterRequest("id");
-
-getAllData("itemview", "categories_id = '$categoryId' ");
-
+<?php 
+include"../connect.php";
+$categoryID = filterRequest('id');
+getAllData("itemsview","categories_id = $categoryID ");
 ?>
