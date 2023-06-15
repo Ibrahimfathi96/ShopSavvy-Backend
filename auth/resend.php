@@ -9,4 +9,3 @@ $data = array(
 
 updateData("users", $data, "users_email = '$email'");
 // sendMail($email, "Verify Code ShopSavvy","Verify Code is $verifycode");
-printSuccess();
