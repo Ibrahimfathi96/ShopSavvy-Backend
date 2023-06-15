@@ -1,6 +1,6 @@
 <?php 
 include "connect.php";
 
-getAllData("itemview", "1 = 1");
+getAllData("itemsview1", "1 = 1");
 
 ?>
