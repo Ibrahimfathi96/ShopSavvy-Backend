@@ -1,8 +1,7 @@
 <?php 
 include"../connect.php";
 
-$itemsId = filterRequest('itemsId');
-$usersId = filterRequest('usersId');
+$usersid = filterRequest("usersId");
+$itemsid = filterRequest("itemsId");
 
-deleteData("cart", "cart_id = (SELECT * FROM cart WHERE cart_user_id = $usersId, 
-AND cart_items_id = $itemsId LIMIT 1)");
+deleteData("cart" , "cart_id  = (SELECT cart_id FROM cart WHERE cart_user_id = $usersid AND cart_items_id = $itemsid LIMIT 1)"); 
