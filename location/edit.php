@@ -3,7 +3,7 @@ include"../connect.php";
 $table  = "location";
 $locationId = filterRequest("location_id");
 $userId     = filterRequest("userId");
-$name   = filterRequest("name");
+$name       = filterRequest("name");
 $city       = filterRequest("city");
 $street     = filterRequest("street");
 $lat        = filterRequest("lat");
