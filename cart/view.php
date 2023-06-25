@@ -4,7 +4,8 @@ include"../connect.php";
 $userId = filterRequest("userId");
 $data = getAllData("cartview","cart_user_id = $userId",null,false);
 
-$stmt = $con->prepare("SELECT SUM(itemsprice) AS totalprice, SUM(itemscount) AS totalcount FROM cartview
+$stmt = $con->prepare("SELECT SUM(itemsprice) AS totalprice, SUM(itemscount) AS totalcount 
+FROM cartview
 WHERE cartview.cart_user_id = $userId
 GROUP BY cart_user_id");
 
