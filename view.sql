@@ -10,4 +10,5 @@ INNER JOIN items ON items.items_id = favorite.favorite_items_id
 CREATE OR REPLACE VIEW cartview AS
 SELECT SUM(items.items_price - (items.items_price * (items.items_discount/100))) AS itemsprice, COUNT(cart_items_id) AS itemscount, cart.* , items.* FROM cart
 INNER JOIN items ON items.items_id = cart.cart_items_id
+WHERE cart_orders = 0
 GROUP BY cart.cart_items_id, cart.cart_user_id

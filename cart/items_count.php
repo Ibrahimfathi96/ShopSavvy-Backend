@@ -5,7 +5,7 @@ $usersId = filterRequest('usersId');
 
 
 $stmt = $con->prepare("SELECT COUNT(cart.cart_id) 
-   AS itemscount FROM  cart WHERE cart_user_id = $usersId AND cart_items_id = $itemsId");
+   AS itemscount FROM  cart WHERE cart_user_id = $usersId AND cart_items_id = $itemsId AND cart_orders = 0");
 
    $stmt-> execute();
    $count = $stmt->rowCount();
