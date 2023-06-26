@@ -27,14 +27,14 @@ function getAllData($table, $where = null, $values = null, $json = true)
         return $count;
     } else {
         if ($count > 0) {
-            return array("status" => "success","data"=>$data);
+            return array("status" => "success", "data" => $data);
         } else {
             return array("status" => "failure");
         }
     }
 }
 
-function getData($table, $where = null, $values = null, $json = true)   
+function getData($table, $where = null, $values = null, $json = true)
 {
     global $con;
     $data = array();
