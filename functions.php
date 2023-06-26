@@ -193,3 +193,46 @@ function sendMail($to, $title, $body)
 
     mail($to, $title, $body, $header);
 }
+function sendGCM($title, $message, $topic, $pageid, $pagename)
+{
+
+
+    $url = 'https://fcm.googleapis.com/fcm/send';
+
+    $fields = array(
+        "to" => '/topics/' . $topic,
+        'priority' => 'high',
+        'content_available' => true,
+
+        'notification' => array(
+            "body" =>  $message,
+            "title" =>  $title,
+            "click_action" => "FLUTTER_NOTIFICATION_CLICK",
+            "sound" => "default"
+
+        ),
+        'data' => array(
+            "pageid" => $pageid,
+            "pagename" => $pagename
+        )
+
+    );
+
+
+    $fields = json_encode($fields);
+    $headers = array(
+        'Authorization: key=' . "AAAAeD4Q0z4:APA91bGLhbd4gQLyXCPoaIqU7MO6hKIrLz_0wADwruNT21dxvxaHPKtnsbizU9qTzAJNKyqHR_JaSdcKdLCW7gC2qCKVIXLzvH4esGiDsE4CxG7Mwqu5WwRI7himufGcXLp6I2TYUWmX",
+        'Content-Type: application/json'
+    );
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+
+    $result = curl_exec($ch);
+    return $result;
+    curl_close($ch);
+}
