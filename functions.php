@@ -236,3 +236,14 @@ function sendGCM($title, $message, $topic, $pageid, $pagename)
     return $result;
     curl_close($ch);
 }
+
+
+function InsertAlerts($title, $body, $userId, $topic, $pageId, $pageName)
+{
+    global $con;
+    $stmt = $con->prepare("INSERT INTO `notifications`(`notifications_title`, `notifications_body`, `notifications_user_id`) VALUES (?,?,?)");
+    $stmt->execute(array($title, $body, $userId));
+    sendGCM($title, $body, $topic, $pageId, $pageName);
+    $count = $stmt->rowCount();
+    return $count;
+}
