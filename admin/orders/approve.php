@@ -7,5 +7,4 @@ $data = array(
     "orders_status" => 1,
 );
 updateData("orders", $data, "orders_id = $orderId AND orders_status = 0");
-//sending alerts and save it into db (Only for specific user "user$userId", "users" would be for all users).
 InsertAlerts("Approval", "your order has been approved", $userId, "user$userId", "none", "refreshPendingOrder");
