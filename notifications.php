@@ -1,4 +1,5 @@
 <?php
-include"./connect.php";
+include "connect.php";
 $userId = filterRequest("userId");
-getAllData("notifications","notifications_user_id = $userId ORDER BY $userId DESC",);
+getAllData("notifications","notifications_user_id = $userId");
+?>
