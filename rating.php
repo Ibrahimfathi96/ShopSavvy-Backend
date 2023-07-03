@@ -5,7 +5,7 @@ $rating         = filterRequest("rating");
 $ratingComment  = filterRequest("ratingComment");
 
 $data =  array(
-    "orders_rating " => $rating,
-    "orders_rating_note " => $ratingComment,
+    "orders_rating" => $rating,
+    "orders_rating_note" => $ratingComment,
 );
 updateData("orders", $data,  "orders_id = $orderId");
