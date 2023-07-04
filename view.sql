@@ -27,7 +27,7 @@ WHERE CART_ORDERS != 0
 GROUP BY CART.CART_ITEMS_ID, CART.CART_USER_ID
 
 CREATE or REPLACE VIEW topSellingItems AS 
-SELECT COUNT(cart_id) as itemsCount, cart.*, items.* FROM cart
+SELECT COUNT(cart_id) as itemsCount, cart.*, items.* , (items_price - (items_price * (items_discount/100))) as itemspricediscount FROM cart
 INNER JOIN items ON items.items_id = cart.cart_items_id
 WHERE cart_orders != 0
 GROUP BY cart_items_id
