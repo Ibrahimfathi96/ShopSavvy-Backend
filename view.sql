@@ -25,3 +25,9 @@ COUNT(CART_ITEMS_ID) AS ITEMSCOUNT, CART.*, ITEMS.* FROM CART
 INNER JOIN ITEMS ON ITEMS.ITEMS_ID = CART.CART_ITEMS_ID
 WHERE CART_ORDERS != 0
 GROUP BY CART.CART_ITEMS_ID, CART.CART_USER_ID
+
+CREATE or REPLACE VIEW topSellingItems AS 
+SELECT COUNT(cart_id) as itemsCount, cart.*, items.* FROM cart
+INNER JOIN items ON items.items_id = cart.cart_items_id
+WHERE cart_orders != 0
+GROUP BY cart_items_id
