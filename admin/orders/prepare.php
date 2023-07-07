@@ -14,7 +14,7 @@ if ($type == 0) {
 }
 
 updateData("orders", $data, "orders_id = $orderId AND orders_status = 1");
-InsertAlerts("Approval", "your order has been approved", $userId, "user$userId", "none", "refreshPendingOrder");
+InsertAlerts("Alert", "your order has been prepared", $userId, "user$userId", "none", "refreshPendingOrder");
 if ($type == 0) {
     sendGCM("Alert", "There is an order needs an approval.", "delivery", "none", "none");
 }
