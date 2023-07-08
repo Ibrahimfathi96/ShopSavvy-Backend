@@ -7,8 +7,8 @@ $email  = filterRequest("email");
 $verfiy = filterRequest("verifycode");
 
 
-$stmt = $con->prepare("SELECT * FROM delivery WHERE 
-delivery_email = '$email' AND delivery_verify_code = '$verfiy' ");
+$stmt = $con->prepare("SELECT * FROM `admin` WHERE 
+admin_email = '$email' AND admin_verify_code = '$verfiy' ");
 
 $stmt->execute();
 
