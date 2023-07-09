@@ -1,5 +1,5 @@
 <?php
-
+// date_default_timezone_set('Africa/Cairo');
 define('MB', 1048576);
 
 function filterRequest($requestname)
