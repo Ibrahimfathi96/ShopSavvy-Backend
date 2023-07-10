@@ -127,7 +127,7 @@ function imageUpload($dir, $imageRequest)
         $imagename  = rand(1000, 10000) . $_FILES[$imageRequest]['name'];
         $imagetmp   = $_FILES[$imageRequest]['tmp_name'];
         $imagesize  = $_FILES[$imageRequest]['size'];
-        $allowExt   = array("jpg", "png", "gif", "mp3", "pdf");
+        $allowExt   = array("jpg", "png", "gif", "mp3", "pdf", "svg");
         $strToArray = explode(".", $imagename);
         $ext        = end($strToArray);
         $ext        = strtolower($ext);
