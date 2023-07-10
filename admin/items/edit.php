@@ -1,7 +1,7 @@
 <?php
 include "../../connect.php";
 $table = "items";
-$itemsId                 = filterRequest("itemsId");
+$itemsId                  = filterRequest("itemsId");
 $itemName                 = filterRequest("itemName");
 $itemNameInArabic         = filterRequest("itemNameInArabic");
 $itemsDescription         = filterRequest("itemsDescription");
