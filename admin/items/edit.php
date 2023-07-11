@@ -26,7 +26,7 @@ if ($imageName == "empty") {
         "items_categories" => $itemsCategoryId,
     );
 } else {
-    deleteFile("../../uploads/categories", $oldImage);
+    deleteFile("../../uploads/items", $oldImage);
     $data = array(
         "items_name"       => $itemName,
         "items_name_ar"    => $itemNameInArabic,
