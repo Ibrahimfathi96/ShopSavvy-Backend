@@ -1,3 +1,3 @@
 <?php
 include "../../connect.php";
-getAllData("items");
+getAllData("itemsview1");
