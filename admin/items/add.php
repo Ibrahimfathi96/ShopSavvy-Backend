@@ -6,7 +6,7 @@ $itemNameInArabic         = filterRequest("itemNameInArabic");
 $itemsDescription         = filterRequest("itemsDescription");
 $itemsDescriptionInArabic = filterRequest("itemsDescriptionInArabic");
 $itemsCount               = filterRequest("itemsCount");
-$itemsActive              = filterRequest("itemsActive");
+
 $itemsPrice               = filterRequest("itemsPrice");
 $itemsDiscount            = filterRequest("itemsDiscount");
 $itemsDate                = filterRequest("itemsDate");
@@ -20,7 +20,7 @@ $data = array(
     "items_desc_ar"    => $itemsDescriptionInArabic,
     "items_image"      => $imageName,
     "items_count"      => $itemsCount,
-    "items_active"     => $itemsActive,
+    "items_active"     => 1,
     "items_price"      => $itemsPrice,
     "items_discount"   => $itemsDiscount,
     "items_date"       => $itemsDate,
